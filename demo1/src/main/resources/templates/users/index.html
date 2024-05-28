@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<table class="table">
+  <thead class="thead-dark">
+  <th>
+    STT
+  </th>
+  <th>
+    ID
+  </th>
+  <th>
+    name
+  </th>
+  <th>
+    email
+  </th>
+  <th>
+    password
+  </th>
+  <th>
+    isDeleted
+  </th>
+  <th>
+    Action
+  </th>
+  </thead>
+  <tbody>
+  <tr th:each ="user : ${users}">
+<!--    <td th:text=" ${studentStat.index+1}"></td>-->
+    <td th:text=" ${user.id}"></td>
+    <td th:text=" ${user.username}"></td>
+    <td th:text="|${user.lastName} ${user.firstName}|"></td>
+    <td th:text=" ${user.email}"></td>
+    <td th:text=" ${user.password}"></td>
+    <td th:text=" ${user.isDeleted}"></td>
+    <td>
+      <a th:href="'/users/edit/'+${user.id}">Edit</a>
+      <a th:href="'/users/delete/'+${user.id}">Delete</a>
+      <a th:href="'/users/view/'+${user.id}">view</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<button onclick="location.href='/users/new'">Create</button>
+</body>
+</html>

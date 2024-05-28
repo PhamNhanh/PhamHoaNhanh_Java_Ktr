@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="'/roles/saveEdit'" th:object="${role}" method="post">
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>
+                <input type="text" readonly="readonly" th:field="*{role_id}">
+            </td>
+        </tr>
+        <tr>
+            <td>RoleName</td>
+            <td>
+                <input type="text" th:field="*{role_name}">
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
